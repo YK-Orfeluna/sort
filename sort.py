@@ -34,7 +34,7 @@ header = answer_data.columns
 print("Number of subjects is %s" %index.values.shape[0])
 print("Number of conditions is %s" %header.values.shape[0])
 
-order_data = pd_read_csv(order_filename)
+order_data = pd.read_csv(order_filename)
 order = order_data.values
 
 
