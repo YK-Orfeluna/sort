@@ -1,9 +1,23 @@
+# -*- coding: utf-8 -*-
+
 import numpy as np
 import pandas as pd
 
-import Tkinter
-import tkMessageBox
-import tkFileDialog
+
+### Pythonのバージョンに合わせたtkinterのimport
+import sys
+v = sys.version_info[0]
+if v == 2 :
+	import Tkinter
+	import tkMessageBox
+	import tkFileDialog
+elif v == 3 :
+	import tkinter as Tkinter
+	from tkinter import messagebox as tkMessageBox
+	from tkinter import filedialog as tkFileDialog
+else :
+	exit("*This script only supports Python2.x or 3.x.\nSorry, we can not support your Python.")
+
 
 ### GUI用のおまじない
 root = Tkinter.Tk()
@@ -21,8 +35,11 @@ lb.configure(text="Chose order-file")
 
 order_filename = tkFileDialog.askopenfilename(filetypes=fTyp,initialdir=iDir)
 
-print("*answer file is %s" %answer_filename)
-print("*order file is %s" %order_filename)
+if answer_filename == "" or order_filename == "" :
+	exit("*You did not chose your csv files")
+else :
+	print("*answer file is %s" %answer_filename)
+	print("*order file is %s" %order_filename)
 
 
 ### csv読み込みとデータ取得
@@ -50,4 +67,4 @@ outname = "out.csv"
 df.to_csv(df)
 print("*Output >>> " + outname)
 
-exit()
+exit("System Exit")
