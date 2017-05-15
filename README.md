@@ -23,3 +23,6 @@ Python2.x，Python3.xどちらも対応済み
 * 読み込むcsvファイルの形式は，同じでなければいけない
 	* 同じ形式のheaderとindex_columnであること
 * 書き出しされるcsvファイルのheaderとindex_columnは並び替え前の回答値のcsvに依存する
+* Python2.xとPython3.xではtkinterの名前が変わっているが，対応済み
+	* sysのversion_infoでPythonの版を取得，それに合わせてimport形式や名前空間を変更している
+	* 基本的にはPython2.xの名前環境に準拠している
