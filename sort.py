@@ -48,8 +48,8 @@ answer = answer_data.values
 index = answer_data.index
 header = answer_data.columns
 
-print("Number of subjects is %s" %index.values.shape[0])
-print("Number of conditions is %s" %header.values.shape[0])
+print("The number of paticipants is %s" %index.values.shape[0])
+print("The number of conditions is %s" %header.values.shape[0])
 
 order_data = pd.read_csv(order_filename)
 order = order_data.values
